@@ -24,9 +24,6 @@
 :before {
   box-sizing: border-box;
 }
-:root {
-  
-}
 html {
   --co: #000;
   --bg: #fff;
