@@ -1,0 +1,132 @@
+@font-face {
+  font-family: sans;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url("font/Inter-4.0/InterVariable.woff2") format("woff2");
+}
+@font-face {
+  font-family: sans;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: block;
+  src: url("font/Inter-4.0/InterVariable-Italic.woff2") format("woff2");
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+html {
+  --co: #000;
+  --bg: #fff;
+  --font-size: 1;
+  --root-leading: 0.5;
+  --leading: var(--root-leading);
+  --leading-half: calc(var(--leading) / 2);
+  --line-height: calc(var(--font-size) + var(--leading));
+  --pad: calc(0.5em / var(--font-size));
+  --unpad: calc(-1 * var(--pad));
+  --pad-half: calc(var(--pad) / 2);
+  --pad-double: calc(var(--pad) * 2);
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-padding: var(--pad);
+  font-size: 100%;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    --co: #fff;
+    --bg: #000;
+  }
+}
+body {
+  background-color: var(--bg);
+  color: var(--co);
+  font-family: sans, system-ui;
+  line-height: var(--line-height);
+  margin: 0;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+header,
+footer {
+  padding: var(--pad);
+}
+main {
+  padding: var(--pad-double);
+}
+footer {
+  margin-bottom: 4em;
+}
+p {
+  margin: 1em 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--pad);
+  max-width: fit-content;
+}
+:focus-visible {
+  outline: 2px solid;
+}
+.inline-links :any-link {
+  border-radius: var(--pad-half);
+}
+.em-links :any-link {
+  color: #08c;
+}
+@media (prefers-color-scheme: dark) {
+  .em-links :any-link {
+    color: #6cf;
+  }
+}
+h1 {
+  --font-size: 3;
+}
+h2 {
+  --font-size: 2;
+}
+h3 {
+  --font-size: 1.5;
+}
+h4 {
+  --font-size: 1;
+}
+:is(h1, h2, h3, h4) {
+  --leading: calc(var(--root-leading) / var(--font-size));
+  --leading-half: calc(var(--leading) / 2);
+  --line-height: calc(1 + var(--leading));
+  --pad: calc(0.5em / var(--font-size));
+  --unpad: calc(-1 * var(--pad));
+  font-size: calc(var(--font-size) * 1em);
+  line-height: var(--line-height);
+  padding: var(--pad) 0;
+  margin: 0;
+}
+:is(h1, h2, h3, h4).link {
+  padding: 0;
+  margin-left: var(--unpad);
+  margin-right: var(--unpad);
+}
+.link a {
+  display: inline-grid;
+  padding: var(--pad);
+  border-radius: calc(var(--pad) / 2);
+}
+:is(header, nav, footer) ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+:is(header, nav, footer) a {
+  display: grid;
+  padding: var(--pad);
+}
+.lines {
+  display: grid;
+}
+.pad {
+  padding: var(--pad);
+}
